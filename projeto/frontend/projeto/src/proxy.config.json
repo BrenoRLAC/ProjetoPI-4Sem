@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://cdn.jsdelivr.net/gh/spbgovbr-vlibras/vlibras-portal@dev/app/vlibras-plugin-new.js",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -1,0 +1,14 @@
+.left-side-content {
+  display: flex;
+  height: 100vh;
+}
+
+.app-sidebar {
+  width: 20vw;
+}
+
+.sidenav-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,46 @@
+.center {
+  display: flex;
+  height: 100vh;
+}
+
+.left-side-content {
+  display: flex;
+  width: 20vw;
+}
+
+.sidenav-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+form {
+  width: 50%;
+  margin-left: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  color: black;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.send-button {
+  background: linear-gradient(#220e24, #342056);
+  color: white !important;
+  width: 200px;
+  justify-content: center;
+  margin-left: 20vw;
+}
+
+
+
+

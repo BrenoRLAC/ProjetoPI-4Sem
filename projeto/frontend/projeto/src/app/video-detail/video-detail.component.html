@@ -1,0 +1,113 @@
+<div class="center">
+  <div class="left-side-content">
+    <app-sidebar class="app-sidebar"></app-sidebar>
+    <div class="sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div fxFlex="65%" class="video-detail">
+    <div fxLayout="column" fxLayoutGap="8px">
+
+      <youtube-player
+        videoId="{{videoUrl}}"
+        suggestedQuality="highres"
+        [height]="600"
+        [width]="1080"
+        [startSeconds]="43"
+        [endSeconds]="60">
+      </youtube-player>
+        <div class="mat-title">Titulo: {{videoTitle}}</div>
+      <div fxLayout="row">
+        <div fxFlex="50%">
+          <span class="view-count"> Visualizações: {{viewCount}}</span>
+        </div>
+        <div fxFlex="50%" fxLayoutAlign="end">
+          <span class="like-dislike-section">
+              <button mat-icon-button class="thumbs-up" (click)="likeOrDislikeVideo(true)">
+                <mat-icon>thumb_up_off_alt</mat-icon>
+                {{likeCount}}
+              </button>
+              <button mat-icon-button class="thumbs-down" (click)="likeOrDislikeVideo(false)">
+                <mat-icon>thumb_down_off_alt</mat-icon>
+                {{dislikeCount}}
+              </button>
+          </span>
+        </div>
+      </div>
+
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle class="subtitles"> </mat-card-subtitle>
+
+      </mat-card-header>
+      <div>{{videoDescription}}</div>
+
+
+      <form class="example-form"   fxFlex="50%"[formGroup]="commentsForm">
+        <mat-form-field style="width: 100%;" class="example-full-width">
+          <mat-label>Deixe um Comentário</mat-label>
+          <textarea matInput formControlName="comment"
+                    placeholder="Comentario"></textarea>
+        </mat-form-field>
+        <div fxLayout="row">
+          <div fxFlex="60%"></div>
+          <div fxFlex="40%" fxFlexAlign="end">
+            <span>
+              <button mat-button>Cancelar</button>
+            </span>
+            <span>
+              <button type="submit" (click)="postComment()" mat-button color="primary">Enviar</button>
+            </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="view-comments" *ngFor="let comment of comments"  class="comment-item"  >
+        <div fxLayout="row">
+          <div fxFlex="50%">
+            <mat-card-header>
+              <div matCardAvatar class="example-header-image"></div>
+
+
+            </mat-card-header>
+          </div>
+          <div fxFlex="50%" class="delete-comment" fxFlexAlign="end">
+
+          </div>
+        </div>
+        <div  class="comments">
+          <ng-container *ngIf="comment.commentId !== null">
+          {{comment.commentText}}
+
+          <section>
+            <section>
+              <button mat-icon-button class="thumbs-up" (click)="likeOrDislikeComment(comment.commentId, true)">
+                <mat-icon>thumb_up_off_alt</mat-icon>
+                {{comment.like}}
+              </button>
+              <button mat-icon-button class="thumbs-down" (click)="likeOrDislikeComment(comment.commentId, false)">
+                <mat-icon>thumb_down_off_alt</mat-icon>
+                {{comment.dislike}}
+              </button>
+              <button  mat-icon-button class="delete-button" matTooltip="Apagar Comentário" (click)="deleteComment(comment.commentId)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </section>
+
+          </section>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="danger-zone">
+      <button mat-icon-button matTooltip="Apagar Video" (click)="deleteVideo(id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,9 @@
+<div fxLayout="row wrap">
+  <h3>Canais</h3>
+</div>
+<div fxLayout="row wrap" fxLayoutGap="12px grid">
+  <div fxFlex="30%" *ngFor="let featuredSubscriptions of featuredSubscriptions">
+    <app-user-card [channel]="featuredSubscriptions"></app-user-card>
+  </div>
+
+</div>

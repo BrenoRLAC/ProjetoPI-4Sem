@@ -1,0 +1,61 @@
+<div class="center">
+  <div class="left-side-content">
+    <app-sidebar class="app-sidebar"></app-sidebar>
+    <div class="sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <form #userForm="ngForm">
+    <h1>Inserir Video </h1>
+    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                   (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        Arraste e solte a Thumbnail do video
+        <button type="button" (click)="openFileSelector()">Procurar arquivos</button>
+      </ng-template>
+    </ngx-file-drop>
+    <div class="upload-table">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+        </thead>
+        <tbody class="upload-name-style">
+        <tr *ngFor="let item of files; let i=index">
+          <td><strong>{{ item.relativePath }}</strong></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <label for="videoUrl"> Video:</label>
+      <input type="text" id="videoUrl" name="videoUrl" [(ngModel)]="videoUrl" required>
+    </div>
+    <div>
+      <label for="title">Titulo:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="title" required>
+    </div>
+    <div>
+      <label for="description">Descrição:</label>
+      <input type="text" id="description" name="description" [(ngModel)]="description" required>
+    </div>
+      <div>
+        <label for="videoStatus">Video Status:</label>
+        <select id="videoStatus" name="videoStatus" [(ngModel)]="videoStatus" required>
+          <option value="1" aria-label="Publico">PUBLICO</option>
+          <option value="2" aria-label="Privado">PRIVADO</option>
+          <option value="3" aria-label="Não listado">NÃO LISTADO</option>
+        </select>
+      </div>
+    <div style="color: red;" *ngIf="errorMessage" class="error-message">
+      Error: {{ errorMessage }}
+    </div>
+    <button class="send-button" mat-button (click)="uploadVideo()" *ngIf="fileUploaded && userForm.valid">
+      Enviar
+    </button>
+
+  </form>
+
+</div>

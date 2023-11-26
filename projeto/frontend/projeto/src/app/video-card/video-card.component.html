@@ -1,0 +1,10 @@
+<mat-card routerLink="/video-details/{{video.id}}">
+    <img mat-card-image [src]="'data:image/jpeg;base64,' + video.thumbnailUrl" alt="Thumbnail">
+    <mat-card-header>
+    <mat-card-title>Titulo: {{video.title}} </mat-card-title>
+   <mat-card-subtitle>Visualização: {{video.viewCount}}</mat-card-subtitle>
+    <mat-card-subtitle>Descrição:  {{video.description }} </mat-card-subtitle>
+      <mat-card-subtitle> Status: {{video.videoStatus }} </mat-card-subtitle>
+      <mat-card-subtitle>Canal:  {{video.channelName }} </mat-card-subtitle>
+     </mat-card-header>
+</mat-card>

@@ -1,0 +1,31 @@
+<div fxLayout="row wrap">
+  <h3>Videos Curtidos</h3>
+</div>
+<div fxLayout="row wrap" fxLayoutGap="6px grid">
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos2">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos3">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos4">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos5">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+  <div fxFlex="30%" *ngFor="let featuredVideo of featuredVideos6">
+    <app-video-card [video]="featuredVideo"></app-video-card>
+  </div>
+
+
+
+</div>

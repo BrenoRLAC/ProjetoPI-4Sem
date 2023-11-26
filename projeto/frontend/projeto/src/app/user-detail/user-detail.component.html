@@ -1,0 +1,22 @@
+<div class="left-side-content">
+  <app-sidebar class="app-sidebar"></app-sidebar>
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div fxFlex="100%">
+  <div fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="center center">
+
+    <img label="imagem" [src]="profileImage" alt="Imagem do usuario">
+
+    <p class="mat-row">Nome: {{firstName}}</p>
+    <p class="mat-row">Sobrenome: {{lastName}}</p>
+    <p class="mat-row">Email: {{email}}</p>
+
+    <button mat-icon-button class="delete-button" matTooltip="Apagar Usuario" (click)="deleteChannel(id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+  </div>
+</div>

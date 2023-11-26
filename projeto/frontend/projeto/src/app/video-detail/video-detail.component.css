@@ -1,0 +1,51 @@
+.left-side-content {
+  display: flex;
+  height: 100vh;
+
+}
+
+.app-sidebar {
+  width: 10vw;
+}
+
+.sidenav-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tooltip-text {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.danger-zone:hover .tooltip-text {
+  display: block;
+}
+
+.danger-zone{
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.delete-button{
+  color: red;
+}
+
+.comments{
+  height:20%;
+  width: 20%;
+  margin-bottom: 5vh;
+
+
+}
+
+

@@ -1,0 +1,8 @@
+<mat-card routerLink="/user-details/{{channel.id}}">
+  <mat-card-header>
+    <img mat-card-avatar [src]="channel.profileImage" alt="Profile Image">
+    <mat-card-title>Nome: {{channel.firstName}} </mat-card-title>
+    <mat-card-subtitle>Sobrenome: {{channel.lastName}}</mat-card-subtitle>
+    <mat-card-subtitle>Canal:  {{channel.fullName }} </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
